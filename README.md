@@ -1,3 +1,15 @@
+Home:
+![image](https://github.com/user-attachments/assets/2d34b083-3304-43cc-ac6f-133c89e415d4)
+
+![image](https://github.com/user-attachments/assets/4d9bf20b-b5da-4d10-a897-afb9026b6b87)
+
+![image](https://github.com/user-attachments/assets/e44ae534-ec0a-40cd-ab7f-a1ac90529c29)
+
+Detail:
+![image](https://github.com/user-attachments/assets/29f0e65b-9b27-487a-99c0-1fae775aa0c8)
+
+
+
 # plantapp
 
 A new Flutter project.
