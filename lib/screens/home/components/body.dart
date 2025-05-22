@@ -1,7 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:plantapp/constants.dart';
+import 'package:plantapp/screens/home/components/featurred_plants.dart';
+import 'package:plantapp/screens/home/components/recomend_plants.dart';
+import 'package:plantapp/screens/home/components/title_with_more_bttn.dart';
+import 'header_with_searchbox.dart';
 
 class Body extends StatelessWidget {
+  const Body({super.key});
+
   @override
   Widget build(BuildContext context) {
     // It will provie us total height  and width of our screen
@@ -13,9 +19,9 @@ class Body extends StatelessWidget {
         children: <Widget>[
           HeaderWithSearchBox(size: size),
           TitleWithMoreBtn(title: "Recomended", press: () {}),
-          RecomendsPlants(),
+          const RecomendsPlants(),
           TitleWithMoreBtn(title: "Featured Plants", press: () {}),
-          FeaturedPlants(),
+          const FeaturedPlants(),
           SizedBox(height: kDefaultPadding),
         ],
       ),

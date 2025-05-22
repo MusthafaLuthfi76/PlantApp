@@ -4,9 +4,7 @@ import 'package:plantapp/screens/details/details_screen.dart';
 import '../../../constants.dart';
 
 class RecomendsPlants extends StatelessWidget {
-  const RecomendsPlants({
-    Key key,
-  }) : super(key: key);
+  const RecomendsPlants({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -22,9 +20,7 @@ class RecomendsPlants extends StatelessWidget {
             press: () {
               Navigator.push(
                 context,
-                MaterialPageRoute(
-                  builder: (context) => DetailsScreen(),
-                ),
+                MaterialPageRoute(builder: (context) => const DetailsScreen()),
               );
             },
           ),
@@ -36,9 +32,7 @@ class RecomendsPlants extends StatelessWidget {
             press: () {
               Navigator.push(
                 context,
-                MaterialPageRoute(
-                  builder: (context) => DetailsScreen(),
-                ),
+                MaterialPageRoute(builder: (context) => const DetailsScreen()),
               );
             },
           ),
@@ -57,17 +51,17 @@ class RecomendsPlants extends StatelessWidget {
 
 class RecomendPlantCard extends StatelessWidget {
   const RecomendPlantCard({
-    Key key,
-    this.image,
-    this.title,
-    this.country,
-    this.price,
-    this.press,
-  }) : super(key: key);
+    super.key,
+    required this.image,
+    required this.title,
+    required this.country,
+    required this.price,
+    required this.press,
+  });
 
   final String image, title, country;
   final int price;
-  final Function press;
+  final VoidCallback press;
 
   @override
   Widget build(BuildContext context) {
@@ -106,8 +100,9 @@ class RecomendPlantCard extends StatelessWidget {
                     text: TextSpan(
                       children: [
                         TextSpan(
-                            text: "$title\n".toUpperCase(),
-                            style: Theme.of(context).textTheme.button),
+                          text: "$title\n".toUpperCase(),
+                          style: Theme.of(context).textTheme.labelLarge,
+                        ),
                         TextSpan(
                           text: "$country".toUpperCase(),
                           style: TextStyle(
@@ -117,18 +112,17 @@ class RecomendPlantCard extends StatelessWidget {
                       ],
                     ),
                   ),
-                  Spacer(),
+                  const Spacer(),
                   Text(
                     '\$$price',
-                    style: Theme.of(context)
-                        .textTheme
-                        .button
-                        .copyWith(color: kPrimaryColor),
-                  )
+                    style: Theme.of(
+                      context,
+                    ).textTheme.labelLarge?.copyWith(color: kPrimaryColor),
+                  ),
                 ],
               ),
             ),
-          )
+          ),
         ],
       ),
     );
