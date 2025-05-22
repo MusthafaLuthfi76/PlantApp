@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:plant_app/constants.dart';
+import 'package:plantapp/constants.dart';
 
 import 'image_and_icons.dart';
 import 'title_and_price.dart';
