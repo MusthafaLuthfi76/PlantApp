@@ -1,13 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:plantapp/constants.dart';
-
+import 'icon_card.dart';
 
 class ImageAndIcons extends StatelessWidget {
-  const ImageAndIcons({
-    Key key,
-    @required this.size,
-  }) : super(key: key);
+  const ImageAndIcons({super.key, required this.size});
 
   final Size size;
 
@@ -21,22 +18,24 @@ class ImageAndIcons extends StatelessWidget {
           children: <Widget>[
             Expanded(
               child: Padding(
-                padding:
-                    const EdgeInsets.symmetric(vertical: kDefaultPadding * 3),
+                padding: const EdgeInsets.symmetric(
+                  vertical: kDefaultPadding * 3,
+                ),
                 child: Column(
                   children: <Widget>[
                     Align(
                       alignment: Alignment.topLeft,
                       child: IconButton(
-                        padding:
-                            EdgeInsets.symmetric(horizontal: kDefaultPadding),
+                        padding: EdgeInsets.symmetric(
+                          horizontal: kDefaultPadding,
+                        ),
                         icon: SvgPicture.asset("assets/icons/back_arrow.svg"),
                         onPressed: () {
                           Navigator.pop(context);
                         },
                       ),
                     ),
-                    Spacer(),
+                    const Spacer(),
                     IconCard(icon: "assets/icons/sun.svg"),
                     IconCard(icon: "assets/icons/icon_2.svg"),
                     IconCard(icon: "assets/icons/icon_3.svg"),

@@ -4,10 +4,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import '../../../constants.dart';
 
 class HeaderWithSearchBox extends StatelessWidget {
-  const HeaderWithSearchBox({
-    Key key,
-    @required this.size,
-  }) : super(key: key);
+  const HeaderWithSearchBox({super.key, required this.size});
 
   final Size size;
 
@@ -37,11 +34,13 @@ class HeaderWithSearchBox extends StatelessWidget {
               children: <Widget>[
                 Text(
                   'Hi Uishopy!',
-                  style: Theme.of(context).textTheme.headline5.copyWith(
-                      color: Colors.white, fontWeight: FontWeight.bold),
+                  style: Theme.of(context).textTheme.headlineSmall?.copyWith(
+                    color: Colors.white,
+                    fontWeight: FontWeight.bold,
+                  ),
                 ),
-                Spacer(),
-                Image.asset("assets/images/logo.png")
+                const Spacer(),
+                Image.asset("assets/images/logo.png"),
               ],
             ),
           ),
@@ -77,9 +76,6 @@ class HeaderWithSearchBox extends StatelessWidget {
                         ),
                         enabledBorder: InputBorder.none,
                         focusedBorder: InputBorder.none,
-                        // surffix isn't working properly  with SVG
-                        // thats why we use row
-                        // suffixIcon: SvgPicture.asset("assets/icons/search.svg"),
                       ),
                     ),
                   ),

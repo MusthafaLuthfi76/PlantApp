@@ -4,10 +4,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import '../../../constants.dart';
 
 class IconCard extends StatelessWidget {
-  const IconCard({
-    Key key,
-    this.icon,
-  }) : super(key: key);
+  const IconCard({super.key, required this.icon});
 
   final String icon;
 
