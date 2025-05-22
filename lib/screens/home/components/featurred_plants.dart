@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:plantapp/screens/details/details_screen.dart';
 
 import '../../../constants.dart';
 
 class FeaturedPlants extends StatelessWidget {
-  const FeaturedPlants({
-    Key key,
-  }) : super(key: key);
+  const FeaturedPlants({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -15,11 +14,21 @@ class FeaturedPlants extends StatelessWidget {
         children: <Widget>[
           FeaturePlantCard(
             image: "assets/images/bottom_img_1.png",
-            press: () {},
+            press: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => const DetailsScreen()),
+              );
+            },
           ),
           FeaturePlantCard(
             image: "assets/images/bottom_img_2.png",
-            press: () {},
+            press: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => const DetailsScreen()),
+              );
+            },
           ),
         ],
       ),
@@ -28,13 +37,10 @@ class FeaturedPlants extends StatelessWidget {
 }
 
 class FeaturePlantCard extends StatelessWidget {
-  const FeaturePlantCard({
-    Key key,
-    this.image,
-    this.press,
-  }) : super(key: key);
+  const FeaturePlantCard({super.key, required this.image, required this.press});
+
   final String image;
-  final Function press;
+  final VoidCallback press;
 
   @override
   Widget build(BuildContext context) {
@@ -42,7 +48,7 @@ class FeaturePlantCard extends StatelessWidget {
     return GestureDetector(
       onTap: press,
       child: Container(
-        margin: EdgeInsets.only(
+        margin: const EdgeInsets.only(
           left: kDefaultPadding,
           top: kDefaultPadding / 2,
           bottom: kDefaultPadding / 2,
@@ -51,10 +57,7 @@ class FeaturePlantCard extends StatelessWidget {
         height: 185,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(10),
-          image: DecorationImage(
-            fit: BoxFit.cover,
-            image: AssetImage(image),
-          ),
+          image: DecorationImage(fit: BoxFit.cover, image: AssetImage(image)),
         ),
       ),
     );
